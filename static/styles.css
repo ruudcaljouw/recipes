@@ -21,14 +21,32 @@ nav a {
 }
 
 .recipes {
-    display: flex;
-    justify-content: space-between;
+    display: block; /* Ensures a vertical layout */
 }
 
-.recipes .breakfast, .recipes .dinner {
-    width: 45%;
+.category {
+    margin-bottom: 2rem; /* Adds spacing between categories */
 }
 
 h1, h2 {
     color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+li a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+li a:hover {
+    text-decoration: underline;
+    color: #0056b3;
 }

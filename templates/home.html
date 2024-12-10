@@ -3,27 +3,35 @@
 {% block content %}
 <h1>Welcome to the Recipe Website</h1>
 <div class="recipes">
-    <div class="breakfast">
+    <div class="category">
         <h2>Breakfast</h2>
         <ul>
             {% for recipe in recipes["breakfast"] %}
-                <li>
-                    <a href="/recipe/breakfast/{{ recipe.name | lower | replace(' ', '-') }}">
-                        {{ recipe.name }}
-                    </a>
-                </li>
+                <li><a href="/recipe/breakfast/{{ recipe.name | lower | replace(' ', '-') }}">{{ recipe.name }}</a></li>
             {% endfor %}
         </ul>
     </div>
-    <div class="dinner">
+    <div class="category">
         <h2>Dinner</h2>
         <ul>
             {% for recipe in recipes["dinner"] %}
-                <li>
-                    <a href="/recipe/dinner/{{ recipe.name | lower | replace(' ', '-') }}">
-                        {{ recipe.name }}
-                    </a>
-                </li>
+                <li><a href="/recipe/dinner/{{ recipe.name | lower | replace(' ', '-') }}">{{ recipe.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="category">
+        <h2>Salads</h2>
+        <ul>
+            {% for recipe in recipes["salads"] %}
+                <li><a href="/recipe/salads/{{ recipe.name | lower | replace(' ', '-') }}">{{ recipe.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="category">
+        <h2>Sides</h2>
+        <ul>
+            {% for recipe in recipes["sides"] %}
+                <li><a href="/recipe/sides/{{ recipe.name | lower | replace(' ', '-') }}">{{ recipe.name }}</a></li>
             {% endfor %}
         </ul>
     </div>
