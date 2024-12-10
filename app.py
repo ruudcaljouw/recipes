@@ -1,6 +1,7 @@
 import os
 import json
 from flask import Flask, render_template
+from flask import request
 
 app = Flask(__name__)
 
@@ -49,6 +50,24 @@ def recipe(category, id):
             recipe["id"] = id  # Ensure the recipe has its ID for template rendering
         return render_template('recipe.html', recipe=recipe)
     return "Recipe not found", 404
+
+
+
+@app.route('/update_hook', methods=['POST'])
+def update_code():
+    """
+    Webhook endpoint for GitHub. Pulls the latest code when triggered.
+    """
+    # Verify the request (optional but recommended)
+    secret = "testing"  # Use the same secret you set in the webhook
+    if not request.headers.get('X-Hub-Signature-256'):
+        return "Unauthorized", 403
+
+    # Run the update script
+    os.system("~/update_code.sh")
+    return "Code updated", 200
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
