@@ -1,37 +1,37 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Welcome to the Recipe Website</h1>
+<h1>Welkom bij Recepten</h1>
 <div class="recipes">
     <div class="category">
-        <h2>Breakfast</h2>
+        <h2>Ontbijt</h2>
         <ul>
             {% for recipe in recipes["breakfast"] %}
-                <li><a href="/recipe/breakfast/{{ recipe.name | lower | replace(' ', '-') }}">{{ recipe.name }}</a></li>
+                <li><a href="/recipe/breakfast/{{ recipe.id }}">{{ recipe.name }}</a></li>
             {% endfor %}
         </ul>
     </div>
     <div class="category">
-        <h2>Dinner</h2>
+        <h2>Avondeten</h2>
         <ul>
             {% for recipe in recipes["dinner"] %}
-                <li><a href="/recipe/dinner/{{ recipe.name | lower | replace(' ', '-') }}">{{ recipe.name }}</a></li>
+                <li><a href="/recipe/dinner/{{ recipe.id }}">{{ recipe.name }}</a></li>
             {% endfor %}
         </ul>
     </div>
     <div class="category">
-        <h2>Salads</h2>
+        <h2>Salades</h2>
         <ul>
             {% for recipe in recipes["salads"] %}
-                <li><a href="/recipe/salads/{{ recipe.name | lower | replace(' ', '-') }}">{{ recipe.name }}</a></li>
+                <li><a href="/recipe/salads/{{ recipe.id }}">{{ recipe.name }}</a></li>
             {% endfor %}
         </ul>
     </div>
     <div class="category">
-        <h2>Sides</h2>
+        <h2>Bijgerechten</h2>
         <ul>
             {% for recipe in recipes["sides"] %}
-                <li><a href="/recipe/sides/{{ recipe.name | lower | replace(' ', '-') }}">{{ recipe.name }}</a></li>
+                <li><a href="/recipe/sides/{{ recipe.id }}">{{ recipe.name }}</a></li>
             {% endfor %}
         </ul>
     </div>

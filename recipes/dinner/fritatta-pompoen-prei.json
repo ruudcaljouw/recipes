@@ -1,0 +1,26 @@
+{
+    "name": "Frittata met pompoen en prei",
+    "slug": "frittata-met-pompoen-en-prei",
+    "category": "dinner",
+    "ingredients": [
+        "Pompoenblokjes",
+        "Prei",
+        "Eieren",
+        "Een beetje room",
+        "Nootmuskaat",
+        "Peper",
+        "Zout",
+        "Parmezaanse kaas"
+    ],
+    "steps": [
+        "Verwarm de oven voor op 180 graden Celsius.",
+        "Bak de pompoenblokjes in een pan tot ze zacht zijn.",
+        "Snijd de prei in ringen en voeg deze toe aan de pan. Bak tot ze glazig zijn.",
+        "Klop de eieren los met een beetje room, nootmuskaat, peper en zout.",
+        "Voeg de gebakken pompoen en prei toe aan het eimengsel.",
+        "Giet alles in een ovenschaal of gietijzeren pan.",
+        "Bestrooi met Parmezaanse kaas.",
+        "Bak in de oven gedurende 20-25 minuten tot de frittata stevig en goudbruin is."
+    ],
+    "source": "N/A"
+}
