@@ -9,7 +9,7 @@ recipes = {
         {"name": "Omelette", "url": "/recipe/omelette", "ingredients": ["Eggs", "Cheese", "Ham"], "steps": "Whisk eggs, add fillings, and cook in a pan."}
     ],
     "dinner": [
-        {"name": "Spaghetti", "url": "/recipe/spaghetti", "ingredients": ["Pasta", "Tomato Sauce", "Meatballs"], "steps": "Cook pasta, heat sauce, combine with meatballs."},
+        {"name": "Spaghett", "url": "/recipe/spaghetti", "ingredients": ["Pasta", "Tomato Sauce", "Meatballs"], "steps": "Cook pasta, heat sauce, combine with meatballs."},
         {"name": "Grilled Chicken", "url": "/recipe/grilled-chicken", "ingredients": ["Chicken", "Olive Oil", "Spices"], "steps": "Marinate chicken, grill until cooked through."}
     ]
 }
