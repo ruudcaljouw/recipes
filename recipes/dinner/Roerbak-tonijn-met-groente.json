@@ -1,6 +1,5 @@
 {
     "name": "Roerbak tonijn met groente",
-    "slug": "roerbak-tonijn-met-groente",
     "category": "dinner",
     "ingredients": [
         "2 blikjes tonijn",
@@ -28,6 +27,5 @@
         "Snijd augurk in kleine stukjes en voeg deze toe voor extra smaak.",
         "Als gewenst, rasp een beetje verse gember en meng dit door het gerecht.",
         "Serveer met plakjes komkommer als frisse bijgerecht."
-    ],
-    "source": "N/A"
+    ]
 }
