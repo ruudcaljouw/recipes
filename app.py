@@ -64,7 +64,7 @@ def update_code():
         return "Unauthorized", 403
 
     # Run the update script
-    os.system("~/update_code.sh")
+    os.system("/home/roadrunner38/update_code.sh")
     return "Code updated", 200
 
 
