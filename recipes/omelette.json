@@ -1,0 +1,6 @@
+{
+    "name": "Omelette",
+    "category": "breakfast",
+    "ingredients": ["Eggs", "Cheese", "Ham"],
+    "steps": "Whisk eggs, add fillings, and cook in a pan."
+}

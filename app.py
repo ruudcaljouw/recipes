@@ -1,29 +1,35 @@
+import os
+import json
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Sample recipes data
-recipes = {
-    "breakfast": [
-        {"name": "Pancakes", "url": "/recipe/pancakes", "ingredients": ["Flour", "Milk", "Eggs"], "steps": "Mix ingredients and cook on a hot pan."},
-        {"name": "Omelette", "url": "/recipe/omelette", "ingredients": ["Eggs", "Cheese", "Ham"], "steps": "Whisk eggs, add fillings, and cook in a pan."}
-    ],
-    "dinner": [
-        {"name": "Spaghett", "url": "/recipe/spaghetti", "ingredients": ["Pasta", "Tomato Sauce", "Meatballs"], "steps": "Cook pasta, heat sauce, combine with meatballs."},
-        {"name": "Grilled Chicken", "url": "/recipe/grilled-chicken", "ingredients": ["Chicken", "Olive Oil", "Spices"], "steps": "Marinate chicken, grill until cooked through."}
-    ]
-}
+# Helper function to load recipes
+def load_recipes():
+    recipes = {"breakfast": [], "dinner": []}
+    recipe_dir = "recipes"
+    for file_name in os.listdir(recipe_dir):
+        if file_name.endswith(".json"):
+            with open(os.path.join(recipe_dir, file_name)) as f:
+                recipe = json.load(f)
+                category = recipe.get("category", "unknown").lower()
+                if category in recipes:
+                    recipes[category].append(recipe)
+    return recipes
 
 @app.route('/')
 def home():
+    recipes = load_recipes()
     return render_template('home.html', recipes=recipes)
 
 @app.route('/recipe/<name>')
 def recipe(name):
-    for category in recipes.values():
-        for recipe in category:
-            if recipe["name"].lower() == name.replace("-", " ").lower():
-                return render_template('recipe.html', recipe=recipe)
+    recipe_dir = "recipes"
+    recipe_file = os.path.join(recipe_dir, f"{name}.json")
+    if os.path.exists(recipe_file):
+        with open(recipe_file) as f:
+            recipe = json.load(f)
+        return render_template('recipe.html', recipe=recipe)
     return "Recipe not found", 404
 
 if __name__ == '__main__':

@@ -7,7 +7,7 @@
         <h2>Breakfast</h2>
         <ul>
             {% for recipe in recipes["breakfast"] %}
-                <li><a href="{{ recipe.url }}">{{ recipe.name }}</a></li>
+                <li><a href="/recipe/{{ recipe.name | lower | replace(' ', '-') }}">{{ recipe.name }}</a></li>
             {% endfor %}
         </ul>
     </div>
@@ -15,7 +15,7 @@
         <h2>Dinner</h2>
         <ul>
             {% for recipe in recipes["dinner"] %}
-                <li><a href="{{ recipe.url }}">{{ recipe.name }}</a></li>
+                <li><a href="/recipe/{{ recipe.name | lower | replace(' ', '-') }}">{{ recipe.name }}</a></li>
             {% endfor %}
         </ul>
     </div>
