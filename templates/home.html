@@ -43,5 +43,13 @@
             {% endfor %}
         </ul>
     </div>
+    <div class="category">
+        <h2>Diversen</h2>
+        <ul>
+            {% for recipe in recipes["divers"] %}
+                <li><a href="/recipe/divers/{{ recipe.id }}">{{ recipe.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 {% endblock %}

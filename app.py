@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Function to load recipes
 def load_recipes():
-    recipes = {"breakfast": [], "lunch": [], "dinner": [], "salads": [], "sides": []}
+    recipes = {"breakfast": [], "lunch": [], "dinner": [], "salads": [], "sides": [], "divers": []}
     recipe_dir = os.path.join(BASE_DIR, "recipes")
     for category in recipes.keys():
         category_path = os.path.join(recipe_dir, category)
