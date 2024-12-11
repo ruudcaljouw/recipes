@@ -1,13 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Welkom bij Recepten</h1>
+<h1>Recepten</h1>
 <div class="recipes">
     <div class="category">
         <h2>Ontbijt</h2>
         <ul>
             {% for recipe in recipes["breakfast"] %}
                 <li><a href="/recipe/breakfast/{{ recipe.id }}">{{ recipe.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="category">
+        <h2>Lunch</h2>
+        <ul>
+            {% for recipe in recipes["lunch"] %}
+                <li><a href="/recipe/lunch/{{ recipe.id }}">{{ recipe.name }}</a></li>
             {% endfor %}
         </ul>
     </div>
@@ -32,6 +40,14 @@
         <ul>
             {% for recipe in recipes["sides"] %}
                 <li><a href="/recipe/sides/{{ recipe.id }}">{{ recipe.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="category">
+        <h2>Diversen</h2>
+        <ul>
+            {% for recipe in recipes["divers"] %}
+                <li><a href="/recipe/divers/{{ recipe.id }}">{{ recipe.name }}</a></li>
             {% endfor %}
         </ul>
     </div>
