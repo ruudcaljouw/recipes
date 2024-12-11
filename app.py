@@ -12,17 +12,26 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 def load_recipes():
     recipes = {"breakfast": [], "lunch": [], "dinner": [], "salads": [], "sides": [], "divers": []}
     recipe_dir = os.path.join(BASE_DIR, "recipes")
+    
     for category in recipes.keys():
         category_path = os.path.join(recipe_dir, category)
-        if os.path.exists(category_path):
-            for file_name in os.listdir(category_path):
-                if file_name.endswith(".json"):
-                    file_path = os.path.join(category_path, file_name)
-                    with open(file_path) as f:
-                        recipe = json.load(f)
-                        recipe["id"] = os.path.splitext(file_name)[0]
-                        recipe["category"] = category
-                        recipes[category].append(recipe)
+        if not os.path.exists(category_path):
+            continue
+        
+        for file_name in os.listdir(category_path):
+            if not file_name.endswith(".json"):
+                continue
+            
+            file_path = os.path.join(category_path, file_name)
+            try:
+                with open(file_path) as f:
+                    recipe = json.load(f)
+                    recipe["id"] = os.path.splitext(file_name)[0]
+                    recipe["category"] = category
+                    recipes[category].append(recipe)
+            except (json.JSONDecodeError, IOError) as e:
+                print(f"Error loading {file_path}: {e}")
+    
     return recipes
 
 # Homepage route
