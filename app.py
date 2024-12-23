@@ -53,9 +53,8 @@ def recipe(category, id):
     if os.path.exists(recipe_file):
         with open(recipe_file) as f:
             recipe = json.load(f)
-        return render_template('recipe.html', recipe=recipe)
+        return render_template('recipe.html', recipe=recipe), 200, {"Content-Type": "text/html; charset=utf-8"}
     return "Recipe not found", 404
-
 
 
 @app.route('/update_hook', methods=['POST'])

@@ -2,16 +2,43 @@
 
 {% block content %}
 <h1>{{ recipe.name }}</h1>
+
 <h2>Ingrediënten:</h2>
-<ul>
-    {% for ingredient in recipe.ingredients %}
-        <li>{{ ingredient }}</li>
+{% if recipe.ingredients is mapping %}
+    {% for category, ingredients in recipe.ingredients.items() %}
+        <h3>{{ category | replace("_", " ") | capitalize }}</h3>
+        <ul>
+            {% for ingredient in ingredients %}
+                <li>{{ ingredient }}</li>
+            {% endfor %}
+        </ul>
     {% endfor %}
-</ul>
+{% else %}
+    <ul>
+        {% for ingredient in recipe.ingredients %}
+            <li>{{ ingredient }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
 <h2>Stappen:</h2>
-<ul>
+<ol>
     {% for step in recipe.steps %}
         <li>{{ step }}</li>
     {% endfor %}
-</ul>
+</ol>
+
+{% if recipe.serving_suggestions %}
+    <h2>Serveertips:</h2>
+    <ul>
+        {% for suggestion in recipe.serving_suggestions %}
+            <li>{{ suggestion }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if recipe.source %}
+    <p>Bron: <a href="{{ recipe.source }}" target="_blank">{{ recipe.source }}</a></p>
+{% endif %}
+
 {% endblock %}
