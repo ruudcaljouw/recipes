@@ -3,6 +3,8 @@
 {% block content %}
 <h1>{{ recipe.name }}</h1>
 
+<p>Aantal personen: 4</p>
+
 <h2>Ingrediënten:</h2>
 {% if recipe.ingredients is mapping %}
     {% for category, ingredients in recipe.ingredients.items() %}
