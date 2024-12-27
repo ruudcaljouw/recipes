@@ -1,37 +1,176 @@
+/* ====================
+   Global Styles
+==================== */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-nav {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 1rem;
-}
-
-.container {
-    padding: 1rem;
-}
-
-.recipes {
-    display: block; /* Ensures a vertical layout */
-}
-
-.category {
-    margin-bottom: 2rem; /* Adds spacing between categories */
-}
-
-h1, h2 {
+    background-color: #f8f9fa; /* Lichte achtergrondkleur voor contrast */
     color: #333;
 }
 
+h1, h2, h3 {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 700; /* Bold voor kopteksten */
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+nav, ul, li, a {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+
+/* ====================
+   Navigation
+==================== */
+nav {
+    background: linear-gradient(90deg, #007BFF, #0056b3); /* Subtle gradient */
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Floating effect */
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center;
+}
+
+nav .nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, background 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+    color: #FFD700; /* Highlight color */
+}
+
+nav .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: left;
+        margin: 0.5rem 0;
+    }
+}
+
+
+
+/* ====================
+   Layout Container
+==================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* ====================
+   Typography
+==================== */
+h1, h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* ====================
+   Recipe Grid
+==================== */
+.recipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; /* Space between grid items */
+    margin-top: 2rem;
+}
+
+/* ====================
+   Recipe Category
+==================== */
+.category {
+    background: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.category h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #007BFF;
+}
+
+.category ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* ====================
+   Recipe Links
+==================== */
+.category li a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category li a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* ====================
+   Lists
+==================== */
 ul {
     list-style-type: none;
     padding: 0;
@@ -41,6 +180,9 @@ li {
     margin: 0.5rem 0;
 }
 
+/* ====================
+   Buttons and Links
+==================== */
 li a {
     text-decoration: none;
     color: #007BFF;
@@ -49,4 +191,131 @@ li a {
 li a:hover {
     text-decoration: underline;
     color: #0056b3;
+}
+
+/* ====================
+   Footer (Optional)
+==================== */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* ====================
+   Recipe Page Styling
+==================== */
+
+/* Hero Section */
+.recipe-hero {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.recipe-hero-image {
+    max-width: 80%; /* Beperkt de breedte van het plaatje */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
+    margin: 0 auto;
+}
+
+/* Titel Sectie */
+.recipe-title {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.recipe-title h1 {
+    font-size: 2rem; /* Iets kleinere titel */
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.recipe-title p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Content Layout */
+.recipe-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Ingrediënten en Stappen */
+.recipe-section {
+    flex: 1 1 45%;
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-section h2 {
+    color: #007BFF;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.recipe-section ul,
+.recipe-section ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recipe-section ul li,
+.recipe-section ol li {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.recipe-section ol li {
+    list-style: decimal inside;
+}
+
+/* Nutrition Section */
+.recipe-nutrition {
+    margin-top: 2rem;
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.recipe-nutrition h2 {
+    margin-bottom: 1rem;
+    color: #007BFF;
+    font-size: 1.5rem;
+}
+
+.recipe-nutrition ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recipe-nutrition li {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+/* Algemene Verbeteringen */
+@media (max-width: 768px) {
+    .recipe-content {
+        flex-direction: column;
+    }
+
+    .recipe-section {
+        flex: 1 1 100%;
+    }
 }

@@ -1,5 +1,7 @@
 {
     "name": "Bloemkoolrijst met kurkuma",
+    "serves": 4,
+    "image": "bloemkoolrijst-met-kurkuma.jpg",
     "ingredients": [
         "1 bloemkool, geraspt tot korreltjes (of kant-en-klare bloemkoolrijst)",
         "60 gram kokosolie",
@@ -15,5 +17,10 @@
         "Roer de kurkuma door de pan en bak dit mee.",
         "Breng op smaak met peper en zout.",
         "Serveer direct als bijgerecht of gebruik als basis voor een maaltijd."
-    ]
+    ],
+    "nutrition": {
+        "protein": "5g",
+        "fat": "10g",
+        "carbohydrates": "7g"
+    }
 }

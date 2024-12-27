@@ -1,5 +1,6 @@
 {
     "name": "Roerei met spinazie en avocado",
+    "serves": 2,
     "ingredients": [
         "2-3 eieren",
         "1 handvol spinazie",
@@ -17,5 +18,10 @@
         "Snijd de avocado in plakjes en leg deze op een bord naast het roerei en de spinazie.",
         "Optioneel: Strooi een snufje chilivlokken of besprenkel met citroensap voor extra smaak.",
         "Serveer direct."
-    ]
+    ],
+    "nutrition": {
+        "protein": "20g",
+        "fat": "18g",
+        "carbohydrates": "5g"
+    }
 }
