@@ -22,19 +22,26 @@ nav, ul, li, a {
 
 
 /* ====================
-   Navigation
+   Navigation Styling
 ==================== */
 nav {
-    background: linear-gradient(90deg, #007BFF, #0056b3); /* Subtle gradient */
+    background: linear-gradient(90deg, #007BFF, #0056b3);
     color: white;
     padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Floating effect */
     display: flex;
-    justify-content: space-between; /* Space between logo and links */
     align-items: center;
+    gap: 1rem;
+}
+
+nav .nav-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 nav .nav-logo {
@@ -44,46 +51,58 @@ nav .nav-logo {
     text-decoration: none;
 }
 
-nav a {
+/* ====================
+   Sliding Menu
+==================== */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Hidden by default */
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(90deg, #0056b3, #003f8b); /* Sidebar gradient */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    transition: left 0.3s ease; /* Smooth slide-in effect */
+    z-index: 1001; /* Above everything else */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.nav-menu.show {
+    left: 0; /* Show the menu */
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nav-links a {
     color: white;
     text-decoration: none;
-    margin-right: 1rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s ease, background 0.3s ease;
-    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
     border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
-    color: #FFD700; /* Highlight color */
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFD700;
 }
 
-nav .nav-links {
-    display: flex;
-    align-items: center;
+/* Optional: Close Button */
+.nav-menu .close-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
-
-/* Responsive Navigation */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav .nav-links {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    nav a {
-        width: 100%;
-        text-align: left;
-        margin: 0.5rem 0;
-    }
-}
-
 
 
 /* ====================

@@ -9,16 +9,38 @@
 </head>
 <body>
     <nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
         <a href="/" class="nav-logo">My Recipes</a>
+    </nav>
+    <div class="nav-menu">
         <div class="nav-links">
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/contact">Contact</a>
         </div>
-    </nav>
+    </div>
+   
     
     <div class="container">
         {% block content %}{% endblock %}
     </div>
+
+    <script>
+        // Toggle the menu visibility
+        document.querySelector('.nav-toggle').addEventListener('click', function () {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('show');
+        });
+
+        // Close the menu when clicking outside (optional)
+        document.addEventListener('click', function (e) {
+            const navMenu = document.querySelector('.nav-menu');
+            const navToggle = document.querySelector('.nav-toggle');
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('show');
+            }
+        });
+    </script>
+
 </body>
 </html>
